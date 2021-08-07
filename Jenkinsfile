@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     MAJOR_VERSION = 1
-    MASTER_IP = '3.8.134.127'
+    MASTER_IP = '35.177.226.45'
     SLAVE_IP = '35.178.182.103'
   }
 
@@ -37,7 +37,7 @@ pipeline {
 
       steps {
         sh "wget http://${env.MASTER_IP}/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
-        sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
+        sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 10 25"
       }
     }
     stage("Test on Debian") {
